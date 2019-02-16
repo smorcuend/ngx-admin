@@ -1,0 +1,17 @@
+version: '3.0' # specify docker-compose version
+
+# Define the services/ containers to be run
+services:
+  reclamador-admin-int:  # name of the first service
+    container_name: reclamador-admin-int
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.int  # specify the directory of the Dockerfile
+    environment:
+      NODE_ENV: integration
+      ___PUBLIC_DSN___:
+    ports:
+      - "4200:4200" # specify port mapping
+    volumes:
+      - '.:/usr/src/app'
+      - '/usr/src/app/node_modules'

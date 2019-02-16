@@ -6,7 +6,7 @@
     "trailing-comma": [
       true,
       {
-        "multiline": "always",
+        "multiline": "allow-null-check",
         "singleline": "never"
       }
     ],

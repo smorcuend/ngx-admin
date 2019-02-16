@@ -14,6 +14,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './@theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxPermissionsModule } from 'ngx-permissions';
+
+import { AppConfigModule } from './app-config.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,11 +29,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
     CoreModule.forRoot(),
+    NgxPermissionsModule.forRoot(),
+    AppConfigModule
   ],
   bootstrap: [AppComponent],
-  providers: [
-    { provide: APP_BASE_HREF, useValue: '/' },
-  ],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
 })
-export class AppModule {
-}
+export class AppModule {}

@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { icons } from 'eva-icons';
 
 @Component({
   selector: 'ngx-icons',
@@ -12,7 +11,7 @@ export class IconsComponent {
   evaIcons = [];
 
   constructor() {
-    this.evaIcons = Object.keys(icons).filter(icon => icon.indexOf('outline') === -1);
+
   }
 
   icons = {

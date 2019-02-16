@@ -3,6 +3,8 @@
 /tmp
 /out-tsc
 
+environment.*
+
 # dependencies
 /node_modules
 
@@ -17,10 +19,10 @@
 
 # IDE - VSCode
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+# !.vscode/settings.json
+# !.vscode/tasks.json
+# !.vscode/launch.json
+# !.vscode/extensions.json
 
 # misc
 /.sass-cache
@@ -28,6 +30,7 @@
 /coverage
 /libpeerconnection.log
 npm-debug.log
+package-lock.json
 testem.log
 /typings
 /docs

@@ -40,7 +40,7 @@ export class StateService implements OnDestroy {
     },
   ];
 
-  protected layoutState$ = new BehaviorSubject(this.layouts[0]);
+  protected layoutState$ = new BehaviorSubject(this.layouts[2]);
   protected sidebarState$ = new BehaviorSubject(this.sidebars[0]);
 
   alive = true;

@@ -1,0 +1,16 @@
+<nb-card status="success">
+  <nb-card-header>{{ worker.name }} {{ worker.surnames }}</nb-card-header>
+  <nb-card-body>
+    <ngx-avatar
+      name={{worker.name}}
+      value="28%"
+      bgColor="#000000"
+      fgColor="#58D3F7"
+      size="250"
+      textSizeRatio="2.5"
+      [round]="true"
+      src={{worker.avatar}}
+    ></ngx-avatar>
+  </nb-card-body>
+  <nb-card-footer>By Wikipedia</nb-card-footer>
+</nb-card>

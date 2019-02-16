@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -17,40 +18,21 @@ import {
   NbCheckboxModule,
   NbPopoverModule,
   NbContextMenuModule,
-  NbProgressBarModule,
-  NbCalendarModule,
-  NbCalendarRangeModule,
-  NbStepperModule,
+  NbAlertModule,
   NbButtonModule,
   NbInputModule,
-  NbAccordionModule,
-  NbDatepickerModule,
-  NbDialogModule,
-  NbWindowModule,
-  NbListModule,
-  NbToastrModule,
-  NbAlertModule,
-  NbSpinnerModule,
-  NbRadioModule,
-  NbSelectModule,
-  NbChatModule,
-  NbTooltipModule,
-  NbCalendarKitModule,
+  NbProgressBarModule,
 } from '@nebular/theme';
 
 import { NbSecurityModule } from '@nebular/security';
+import { NbAuthModule } from '@nebular/auth';
 
 import {
   FooterComponent,
   HeaderComponent,
   SearchInputComponent,
-  ThemeSettingsComponent,
   SwitcherComponent,
-  LayoutDirectionSwitcherComponent,
-  ThemeSwitcherComponent,
-  TinyMCEComponent,
-  ThemeSwitcherListComponent,
-  ToggleSettingsButtonComponent,
+  RecLoginComponent
 } from './components';
 import {
   CapitalizePipe,
@@ -58,19 +40,14 @@ import {
   RoundPipe,
   TimingPipe,
   NumberWithCommasPipe,
-  EvaIconsPipe,
 } from './pipes';
 import {
-  OneColumnLayoutComponent,
-  SampleLayoutComponent,
-  ThreeColumnsLayoutComponent,
-  TwoColumnsLayoutComponent,
+  OneColumnLayoutComponent
 } from './layouts';
 import { DEFAULT_THEME } from './styles/theme.default';
-import { COSMIC_THEME } from './styles/theme.cosmic';
 import { CORPORATE_THEME } from './styles/theme.corporate';
 
-const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule];
+const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule, RouterModule];
 
 const NB_MODULES = [
   NbCardModule,
@@ -86,47 +63,24 @@ const NB_MODULES = [
   NbPopoverModule,
   NbContextMenuModule,
   NgbModule,
-  NbSecurityModule, // *nbIsGranted directive,
-  NbProgressBarModule,
-  NbCalendarModule,
-  NbCalendarRangeModule,
-  NbStepperModule,
+  NbSecurityModule, // *nbIsGranted directive
+  NbAuthModule,
   NbButtonModule,
-  NbListModule,
-  NbToastrModule,
-  NbInputModule,
-  NbAccordionModule,
-  NbDatepickerModule,
-  NbDialogModule,
-  NbWindowModule,
   NbAlertModule,
-  NbSpinnerModule,
-  NbRadioModule,
-  NbSelectModule,
-  NbChatModule,
-  NbTooltipModule,
-  NbCalendarKitModule,
+  NbInputModule,
+  NbProgressBarModule,
 ];
 
 const COMPONENTS = [
   SwitcherComponent,
-  LayoutDirectionSwitcherComponent,
-  ThemeSwitcherComponent,
-  ThemeSwitcherListComponent,
   HeaderComponent,
   FooterComponent,
   SearchInputComponent,
-  ThemeSettingsComponent,
-  TinyMCEComponent,
   OneColumnLayoutComponent,
-  SampleLayoutComponent,
-  ThreeColumnsLayoutComponent,
-  TwoColumnsLayoutComponent,
-  ToggleSettingsButtonComponent,
+  RecLoginComponent
 ];
 
 const ENTRY_COMPONENTS = [
-  ThemeSwitcherListComponent,
 ];
 
 const PIPES = [
@@ -135,25 +89,17 @@ const PIPES = [
   RoundPipe,
   TimingPipe,
   NumberWithCommasPipe,
-  EvaIconsPipe,
 ];
 
 const NB_THEME_PROVIDERS = [
   ...NbThemeModule.forRoot(
     {
-      name: 'cosmic',
+      name: 'corporate',
     },
-    [ DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME ],
+    [ DEFAULT_THEME, CORPORATE_THEME ],
   ).providers,
   ...NbSidebarModule.forRoot().providers,
   ...NbMenuModule.forRoot().providers,
-  ...NbDatepickerModule.forRoot().providers,
-  ...NbDialogModule.forRoot().providers,
-  ...NbWindowModule.forRoot().providers,
-  ...NbToastrModule.forRoot().providers,
-  ...NbChatModule.forRoot({
-    messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
-  }).providers,
 ];
 
 @NgModule({
