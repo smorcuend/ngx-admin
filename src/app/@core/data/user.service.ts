@@ -1,10 +1,9 @@
 import { NgxPermissionsService } from 'ngx-permissions';
-import { Permissions } from './user.service';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, flatMap, shareReplay, tap } from 'rxjs/operators';
-import { SessionStorageService } from 'ngx-store';
+import { flatMap, map, shareReplay, tap } from 'rxjs/operators';
+import { StorageMap } from '@ngx-pwa/local-storage';
 import { Router } from '@angular/router';
 
 export interface User {
@@ -47,11 +46,13 @@ export class UserService {
 
   constructor(
     private http: HttpClient,
-    private sessionStorageService: SessionStorageService,
+    private storage: StorageMap,
     private permissionsService: NgxPermissionsService,
     private router: Router
   ) {
-    this.username = this.sessionStorageService.get('username');
+    this.storage.get('username').subscribe((data: string) => {
+      this.username = data;
+    });
   }
 
   getUser$(): Observable<Worker> {

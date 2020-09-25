@@ -5,10 +5,8 @@
  */
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { NB_AUTH_OPTIONS, NbAuthSocialLink } from '@nebular/auth/auth.options';
-import { getDeepFromObject } from '@nebular/auth/helpers';
+import { NB_AUTH_OPTIONS, NbAuthSocialLink, getDeepFromObject, NbAuthService } from '@nebular/auth';
 
-import { NbAuthService } from '@nebular/auth/services/auth.service';
 import { NbAuthResult } from '@nebular/auth/services/auth-result';
 
 @Component({

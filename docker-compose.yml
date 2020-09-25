@@ -2,8 +2,8 @@ version: '3.0' # specify docker-compose version
 
 # Define the services/ containers to be run
 services:
-  reclamador-admin-dev:  # name of the first service
-    container_name: reclamador-admin-dev
+  ngx-admin:  # name of the first service
+    container_name: ngx-admin
     build:
       context: .
       dockerfile: ./docker/Dockerfile # specify the directory of the Dockerfile

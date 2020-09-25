@@ -1,4 +1,4 @@
-import { VERSION } from './../../../../version';
+// import { VERSION } from './../../../../version';
 import { Worker } from './../../../@core/data/user.service';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -17,7 +17,8 @@ export class HeaderComponent implements OnInit {
 
   worker: Worker;
   appName: string = '';
-  VERSION = VERSION.version;
+  // VERSION = VERSION.version;
+  VERSION = '';
 
   userMenu = [{ title: 'Profile', link: 'pages/profile' }, { title: 'Log out', link: '/auth/logout' }];
 

@@ -2,7 +2,6 @@ import { RouterModule } from '@angular/router';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import {
   NbActionsModule,
@@ -31,7 +30,6 @@ import {
   FooterComponent,
   HeaderComponent,
   SearchInputComponent,
-  SwitcherComponent,
   RecLoginComponent
 } from './components';
 import {
@@ -62,7 +60,6 @@ const NB_MODULES = [
   NbCheckboxModule,
   NbPopoverModule,
   NbContextMenuModule,
-  NgbModule,
   NbSecurityModule, // *nbIsGranted directive
   NbAuthModule,
   NbButtonModule,
@@ -72,7 +69,6 @@ const NB_MODULES = [
 ];
 
 const COMPONENTS = [
-  SwitcherComponent,
   HeaderComponent,
   FooterComponent,
   SearchInputComponent,
@@ -94,7 +90,7 @@ const PIPES = [
 const NB_THEME_PROVIDERS = [
   ...NbThemeModule.forRoot(
     {
-      name: 'corporate',
+      name: 'default',
     },
     [ DEFAULT_THEME, CORPORATE_THEME ],
   ).providers,
@@ -109,8 +105,8 @@ const NB_THEME_PROVIDERS = [
   entryComponents: [...ENTRY_COMPONENTS],
 })
 export class ThemeModule {
-  static forRoot(): ModuleWithProviders {
-    return <ModuleWithProviders>{
+  static forRoot(): ModuleWithProviders<ThemeModule> {
+    return {
       ngModule: ThemeModule,
       providers: [...NB_THEME_PROVIDERS],
     };

@@ -15,7 +15,7 @@ export const APP_DI_CONFIG: AppConfig = {
   production: environment.production,
   ___PUBLIC_DSN___: environment.___PUBLIC_DSN___,
   API_URL: environment.API_URL,
-  appTitle: 'Angular Admin Boilerplate - Reclamador.es'
+  appTitle: 'Angular Admin Boilerplate'
 };
 
 /* Sentry */

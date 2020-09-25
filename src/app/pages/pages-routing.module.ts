@@ -21,7 +21,18 @@ const routes: Routes = [
       },
       {
         path: 'miscellaneous',
-        loadChildren: './miscellaneous/miscellaneous.module#MiscellaneousModule'
+        loadChildren: () => import('./miscellaneous/miscellaneous.module')
+          .then(m => m.MiscellaneousModule),
+      },
+      {
+        path: 'ui-features',
+        loadChildren: () => import('./ui-features/ui-features.module')
+          .then(m => m.UiFeaturesModule),
+      },
+      {
+        path: 'modal-overlays',
+        loadChildren: () => import('./modal-overlays/modal-overlays.module')
+          .then(m => m.ModalOverlaysModule),
       },
       {
         path: '',
