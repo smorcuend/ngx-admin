@@ -66,19 +66,19 @@ export const NB_CORE_PROVIDERS = [
         name: 'logout',
         delay: 2000
       }),
-      // NbPasswordAuthStrategy.setup({
-      //   name: 'username',
-      //   baseEndpoint: `/api/`,
-      //   token: {
-      //     class: NbAuthSimpleToken,
-      //     key: 'key',
-      //     getter: getterHeader
-      //   },
-      //   login: {
-      //     endpoint: 'api2/v1/apikey/',
-      //   },
-      //   // logout: { }
-      // })
+      NbPasswordAuthStrategy.setup({
+        name: 'username',
+        baseEndpoint: `/api/`,
+        token: {
+          class: NbAuthSimpleToken,
+          key: 'key',
+          getter: getterHeader
+        },
+        login: {
+          endpoint: 'api2/v1/apikey/',
+        },
+        // logout: { }
+      })
     ],
     forms: {
       login: {
